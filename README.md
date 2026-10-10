@@ -1,4 +1,8 @@
-# CEREBRO GCP Ecosystem
+<p align="center">
+  <img src="assets/hero-banner.svg" alt="Cerebro GCP Ecosystem Banner" width="100%" />
+</p>
+
+# ☁️ CEREBRO GCP Ecosystem
 
 Cloud-native infrastructure for the CEREBRO OMEGA ecosystem on Google Cloud Platform.
 
