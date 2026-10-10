@@ -1,0 +1,9 @@
+{
+  "name": "cerebro-on-security-event",
+  "version": "1.0.0",
+  "description": "CEREBRO Security Event Handler",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.3.0"
+  }
+}

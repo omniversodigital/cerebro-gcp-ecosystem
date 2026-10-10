@@ -1,0 +1,11 @@
+{
+  "name": "cerebro-osint-perception",
+  "version": "1.0.0",
+  "description": "OSINT Perception and Reasoning Layer using Fable 5",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
+    "@google-cloud/pubsub": "^4.3.3",
+    "axios": "^1.7.2"
+  }
+}

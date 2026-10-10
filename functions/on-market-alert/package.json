@@ -1,0 +1,9 @@
+{
+  "name": "cerebro-on-market-alert",
+  "version": "1.0.0",
+  "description": "CEREBRO Market Alert Handler",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.3.0"
+  }
+}

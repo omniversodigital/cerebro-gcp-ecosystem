@@ -1,0 +1,16 @@
+{
+  "name": "cerebro-quantum-memory",
+  "version": "1.0.0",
+  "description": "Cross-session stateful memory microservice for CEREBRO OMEGA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "@google-cloud/bigquery": "^7.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

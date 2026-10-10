@@ -1,0 +1,134 @@
+steps:
+# 1. Deploy API Gateway
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - 'cerebro-api-gateway'
+  - '--source'
+  - './services/api-gateway'
+  - '--region'
+  - 'us-central1'
+  - '--no-allow-unauthenticated'
+  - '--project'
+  - '$PROJECT_ID'
+
+# 2. Deploy Model Router
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - 'cerebro-model-router'
+  - '--source'
+  - './ai/model-router'
+  - '--region'
+  - 'us-central1'
+  - '--no-allow-unauthenticated'
+  - '--set-secrets'
+  - 'CEREBRO_FABLE_API_KEY=cerebro-fable-api-key:latest'
+  - '--project'
+  - '$PROJECT_ID'
+
+# 3. Deploy Quantum Memory
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - 'cerebro-quantum-memory'
+  - '--source'
+  - './services/quantum-memory'
+  - '--region'
+  - 'us-central1'
+  - '--no-allow-unauthenticated'
+  - '--project'
+  - '$PROJECT_ID'
+
+# 4. Deploy On-Security-Event Function
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'functions'
+  - 'deploy'
+  - 'cerebro-on-security-event'
+  - '--gen2'
+  - '--runtime'
+  - 'nodejs20'
+  - '--trigger-topic'
+  - 'security-alerts'
+  - '--entry-point'
+  - 'processSecurityEvent'
+  - '--region'
+  - 'us-central1'
+  - '--source'
+  - './functions/on-security-event'
+  - '--project'
+  - '$PROJECT_ID'
+
+# 5. Deploy On-Market-Alert Function
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'functions'
+  - 'deploy'
+  - 'cerebro-on-market-alert'
+  - '--gen2'
+  - '--runtime'
+  - 'nodejs20'
+  - '--trigger-topic'
+  - 'market-signals'
+  - '--entry-point'
+  - 'processMarketSignal'
+  - '--region'
+  - 'us-central1'
+  - '--source'
+  - './functions/on-market-alert'
+  - '--project'
+  - '$PROJECT_ID'
+
+# 6. Deploy On-Skill-Synthesis Function
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'functions'
+  - 'deploy'
+  - 'cerebro-on-skill-synthesis'
+  - '--gen2'
+  - '--runtime'
+  - 'nodejs20'
+  - '--trigger-topic'
+  - 'ecosystem-events'
+  - '--entry-point'
+  - 'processEcosystemEvent'
+  - '--region'
+  - 'us-central1'
+  - '--source'
+  - './functions/on-skill-synthesis'
+  - '--project'
+  - '$PROJECT_ID'
+
+# 7. Deploy OSINT Perception Function
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'functions'
+  - 'deploy'
+  - 'cerebro-osint-perception'
+  - '--gen2'
+  - '--runtime'
+  - 'nodejs20'
+  - '--trigger-topic'
+  - 'ecosystem-events'
+  - '--entry-point'
+  - 'gatherPerception'
+  - '--region'
+  - 'us-central1'
+  - '--source'
+  - './functions/osint-perception'
+  - '--project'
+  - '$PROJECT_ID'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

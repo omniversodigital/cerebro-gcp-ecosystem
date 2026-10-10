@@ -1,0 +1,15 @@
+{
+  "name": "cerebro-osint-perception",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "axios": "^1.7.2",
+    "yahoo-finance2": "^2.11.3",
+    "@google-cloud/pubsub": "^4.3.3"
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "trace_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique trace identifier"
+  },
+  {
+    "name": "model",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "AI model used (gemini-pro, gemini-flash, deepseek-r1, etc.)"
+  },
+  {
+    "name": "interaction_type",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Type: chat, completion, embedding, vision, code"
+  },
+  {
+    "name": "input_tokens",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Number of input tokens"
+  },
+  {
+    "name": "output_tokens",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Number of output tokens"
+  },
+  {
+    "name": "latency_ms",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Response latency in milliseconds"
+  },
+  {
+    "name": "cost_usd",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Estimated cost in USD"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Source skill or service"
+  },
+  {
+    "name": "metadata",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "JSON string with additional context"
+  },
+  {
+    "name": "recorded_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "When the interaction occurred"
+  }
+]

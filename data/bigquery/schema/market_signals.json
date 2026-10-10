@@ -1,0 +1,56 @@
+[
+  {
+    "name": "trace_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique trace identifier for the signal"
+  },
+  {
+    "name": "symbol",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Trading symbol (e.g., EURUSD, BTCUSDT)"
+  },
+  {
+    "name": "action",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Signal action: BUY, SELL, HOLD, CLOSE"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Signal source (mt5, polymarket, manual, oracle)"
+  },
+  {
+    "name": "confidence",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Confidence score 0.0 to 1.0"
+  },
+  {
+    "name": "price",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Price at signal time"
+  },
+  {
+    "name": "metadata",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "JSON string with additional signal data"
+  },
+  {
+    "name": "received_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "When the signal was received"
+  },
+  {
+    "name": "processed_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE",
+    "description": "When the signal was processed"
+  }
+]

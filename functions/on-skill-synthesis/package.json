@@ -1,0 +1,9 @@
+{
+  "name": "cerebro-on-skill-synthesis",
+  "version": "1.0.0",
+  "description": "CEREBRO Skill Synthesis and Nightly Audit Handler",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.3.0"
+  }
+}

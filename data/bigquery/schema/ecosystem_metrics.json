@@ -1,0 +1,32 @@
+[
+  {
+    "name": "trace_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique trace identifier"
+  },
+  {
+    "name": "metric_type",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Type of metric (nightly_audit, health_check, performance)"
+  },
+  {
+    "name": "metric_data",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "JSON string with metric values"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Source service that generated the metric"
+  },
+  {
+    "name": "recorded_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "When the metric was recorded"
+  }
+]

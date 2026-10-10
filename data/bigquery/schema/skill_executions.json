@@ -1,0 +1,68 @@
+[
+  {
+    "name": "trace_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique trace identifier for the execution"
+  },
+  {
+    "name": "skill_name",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Name of the skill executed"
+  },
+  {
+    "name": "command",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Command or action that triggered the skill"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Source of the execution (api-gateway, scheduler, manual)"
+  },
+  {
+    "name": "status",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Execution status: SUCCESS, FAILED, TIMEOUT, CANCELLED"
+  },
+  {
+    "name": "duration_ms",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Execution duration in milliseconds"
+  },
+  {
+    "name": "input_payload",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "JSON string of input parameters"
+  },
+  {
+    "name": "output_payload",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "JSON string of execution result"
+  },
+  {
+    "name": "error_message",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Error message if execution failed"
+  },
+  {
+    "name": "received_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "When the execution request was received"
+  },
+  {
+    "name": "completed_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE",
+    "description": "When the execution completed"
+  }
+]

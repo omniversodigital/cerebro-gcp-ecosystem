@@ -1,0 +1,56 @@
+[
+  {
+    "name": "trace_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique trace identifier"
+  },
+  {
+    "name": "severity",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "CRITICAL, HIGH, MEDIUM, LOW, INFO"
+  },
+  {
+    "name": "event_type",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Type of security event"
+  },
+  {
+    "name": "description",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Human-readable description"
+  },
+  {
+    "name": "source",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Source of the event"
+  },
+  {
+    "name": "metadata",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "JSON string with event details"
+  },
+  {
+    "name": "received_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "When the event was received"
+  },
+  {
+    "name": "resolved",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE",
+    "description": "Whether the event has been resolved"
+  },
+  {
+    "name": "resolved_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE",
+    "description": "When the event was resolved"
+  }
+]
